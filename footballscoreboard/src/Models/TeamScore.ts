@@ -8,4 +8,12 @@ export class TeamScore {
     this.team = { name };
     this.score = 0;
   }
+
+  getTeamName() {
+    return this.team.name;
+  }
+
+  getScoredGoals() {
+    return this.score;
+  }
 }

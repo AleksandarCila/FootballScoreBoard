@@ -25,7 +25,7 @@ export class Game {
     return this.home.team.name;
   }
 
-  getHomeTeamScore() {
+  getHomeTeamScoredGoals() {
     return this.home.score;
   }
 
@@ -33,7 +33,7 @@ export class Game {
     return this.away.team.name;
   }
 
-  getAwayTeamScore() {
+  getAwayTeamScoredGoals() {
     return this.away.score;
   }
 }
