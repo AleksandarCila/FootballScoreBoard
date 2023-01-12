@@ -5,8 +5,8 @@ export class Game {
   home: TeamScore;
   away: TeamScore;
 
-  constructor(homeTeam: Team, awayTeam: Team) {
-    this.home = new TeamScore(homeTeam.name)
-    this.away = new TeamScore(awayTeam.name)
+  constructor(homeTeamName: string, awayTeamName: string) {
+    this.home = new TeamScore(homeTeamName)
+    this.away = new TeamScore(awayTeamName)
   }
 }
