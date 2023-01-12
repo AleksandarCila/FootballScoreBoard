@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useValidateTeamNames = (homeTeam: string, awayTeam: string) => {
-  const [isStartDisabled, setIsStartDisabled] = useState(false);
+  const [isStartDisabled, setIsStartDisabled] = useState(true);
 
   useEffect(
     function enableStartIfNamesAreValid() {

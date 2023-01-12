@@ -41,8 +41,19 @@ export class Game {
     return this.home.getScoredGoals() + this.away.getScoredGoals();
   }
 
-  isCreatedBefore(game:Game){
+  isOlderThan(game:Game){
+    console.log(this.created_at.getMilliseconds(),game.created_at.getMilliseconds())
     if(this.created_at.getMilliseconds() < game.created_at.getMilliseconds()) return true;
+    else return false;
+  }
+
+  hasMoreGoalsThan(game:Game){
+    if(this.getTotalGoalsScored() > game.getTotalGoalsScored()) return true;
+    else return false;
+  }
+
+  hasLessGoalsThan(game:Game){
+    if(this.getTotalGoalsScored() < game.getTotalGoalsScored()) return true;
     else return false;
   }
 }

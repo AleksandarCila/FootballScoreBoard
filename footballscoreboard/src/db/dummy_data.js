@@ -11,6 +11,16 @@ export const data = [
   },
   {
     "home": {
+      "name": "Poland",
+      "score": 2
+    },
+    "away": {
+      "name": "USA",
+      "score": 2
+    }
+  },
+  {
+    "home": {
       "name": "Mexico",
       "score": 1
     },
