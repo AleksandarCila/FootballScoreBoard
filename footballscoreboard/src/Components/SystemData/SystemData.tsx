@@ -1,6 +1,7 @@
+import { NewGame } from "../NewGame"
 
 export const SystemData = () => {
   return (
-    <div>SystemData</div>
+    <div><NewGame/></div>
   )
 }
