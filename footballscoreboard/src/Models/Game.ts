@@ -36,4 +36,13 @@ export class Game {
   getAwayTeamScoredGoals() {
     return this.away.score;
   }
+
+  getTotalGoalsScored() {
+    return this.home.getScoredGoals() + this.away.getScoredGoals();
+  }
+
+  isCreatedBefore(game:Game){
+    if(this.created_at.getMilliseconds() < game.created_at.getMilliseconds()) return true;
+    else return false;
+  }
 }
