@@ -8,7 +8,7 @@ type BoardElementProps = {
 
 export const BoardElement: FC<BoardElementProps> = ({ title, children }) => {
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" textAlign="center">
       <Text>{title}</Text>
       {children}
     </Flex>
