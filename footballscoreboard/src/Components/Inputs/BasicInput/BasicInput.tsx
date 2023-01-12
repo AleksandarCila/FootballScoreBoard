@@ -1,5 +1,5 @@
 import { FC, ChangeEvent, FocusEvent, useState } from "react";
-import { Flex, Input, Text } from "@chakra-ui/react";
+import { Flex, Input, Text, Tooltip } from "@chakra-ui/react";
 import { useValidate } from "./hooks";
 
 type BasicInputProps = {
@@ -12,6 +12,8 @@ export const BasicInput: FC<BasicInputProps> = ({ label, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const { error } = useValidate(value, label);
+
+  const shouldDisplayError = isFocused && error.length > 0;
 
   const handleFocusGained = (e: FocusEvent<HTMLInputElement>) => {
     setIsFocused(true);
@@ -33,17 +35,14 @@ export const BasicInput: FC<BasicInputProps> = ({ label, value, onChange }) => {
       onFocus={handleFocusGained}
       onBlur={handleFocusLost}
     >
-      <Input
-        value={value}
-        onChange={handleOnChange}
-        size="sm"
-        placeholder={label}
-      />
-      {isFocused && (
-        <Text color="red.300" as="i" fontSize="sm">
-          {error}
-        </Text>
-      )}
+      <Tooltip hasArrow color="red.300" label={error} isOpen={shouldDisplayError}>
+        <Input
+          value={value}
+          onChange={handleOnChange}
+          size="sm"
+          placeholder={label}
+        />
+      </Tooltip>
     </Flex>
   );
 };
