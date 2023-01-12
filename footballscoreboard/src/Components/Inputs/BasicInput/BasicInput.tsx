@@ -14,7 +14,6 @@ export const BasicInput: FC<BasicInputProps> = ({ label, value, onChange }) => {
 
   return (
     <Flex flexDirection="column" textAlign="center" gap={2}>
-      <Text>{label}</Text>
       <Input
         value={value}
         onChange={handleOnChange}
