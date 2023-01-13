@@ -8,8 +8,8 @@ export const GameOptions = () => {
 
   return (
     <Stack>
-      <Button onClick={handleFinishGame}>Finish</Button>
-      <Button onClick={handleUpdateGame}>Update</Button>
+      <Button onClick={handleFinishGame} width="100px">Finish</Button>
+      <Button onClick={handleUpdateGame} width="100px">Update</Button>
     </Stack>
   );
 };

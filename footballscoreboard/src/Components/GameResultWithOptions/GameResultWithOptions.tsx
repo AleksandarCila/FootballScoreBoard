@@ -5,7 +5,7 @@ import { finishGame, updateGame } from "../../store/actions";
 
 import { GameResultContext } from "./context";
 
-import { Flex } from "@chakra-ui/react";
+import { Divider, Flex } from "@chakra-ui/react";
 import { GameOptions } from "./components";
 import { EditableGameResult } from "./components";
 
@@ -52,6 +52,7 @@ export const GameResultWithOptions: FC<GameResultWithOptionsProps> = ({
         <EditableGameResult game={game} isEditable={true} />
         <GameOptions />
       </Flex>
+      <Divider m="2"/>
     </GameResultContext.Provider>
   );
 };

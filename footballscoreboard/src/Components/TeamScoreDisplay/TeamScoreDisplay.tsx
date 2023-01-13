@@ -41,7 +41,8 @@ export const TeamScoreDisplay: FC<TeamScoreDisplayProps> = ({
           value={score}
           min={0}
           onChange={handleChange}
-          width="50px"
+          width="100px"
+          p="0"
         >
           <NumberInputField />
         </NumberInput>

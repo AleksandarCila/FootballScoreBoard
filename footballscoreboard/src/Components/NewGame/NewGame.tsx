@@ -27,8 +27,8 @@ export const NewGame = () => {
   };
 
   return (
-    <Flex justifyContent="space-between" alignItems="center" p="2" gap={5}>
-      <Flex flex={1} justifyContent="center" gap={5}>
+    <Flex justifyContent="space-between" alignItems="center" m="2" gap={5}>
+      <Flex flex={1} justifyContent="center" gap={2}>
         <BasicInput value={homeTeam} onChange={setHomeTeam} label="Home Team" />
         <Box>-</Box>
         <BasicInput value={awayTeam} onChange={setAwayTeam} label="Away Team" />
@@ -39,7 +39,7 @@ export const NewGame = () => {
         label={error}
         isOpen={shouldDisplayError}
       >
-        <Button onClick={handleStartNewGame} disabled={isStartDisabled}>
+        <Button onClick={handleStartNewGame} disabled={isStartDisabled} width="100px">
           Start
         </Button>
       </Tooltip>
