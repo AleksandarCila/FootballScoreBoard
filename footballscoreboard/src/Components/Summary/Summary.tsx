@@ -11,7 +11,7 @@ import { sortGamesByDateAndScore } from "./helpers";
 
 export const Summary = () => {
   const games = useSelector((state: StoreState) => state.games);
-
+  console.log(games)
   const orderedGamesByScore = useMemo(() => {
     return sortGamesByDateAndScore(games);
   }, [games]);

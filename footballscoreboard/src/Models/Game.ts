@@ -42,8 +42,7 @@ export class Game {
   }
 
   isOlderThan(game:Game){
-    console.log(this.created_at.getMilliseconds(),game.created_at.getMilliseconds())
-    if(this.created_at.getMilliseconds() < game.created_at.getMilliseconds()) return true;
+    if(this.created_at.getTime() < game.created_at.getTime()) return true;
     else return false;
   }
 
