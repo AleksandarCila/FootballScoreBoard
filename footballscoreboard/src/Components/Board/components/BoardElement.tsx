@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { Flex, Text } from "@chakra-ui/react";
+import { Divider, Flex, Text } from "@chakra-ui/react";
 
 type BoardElementProps = {
   title: string;
@@ -8,8 +8,9 @@ type BoardElementProps = {
 
 export const BoardElement: FC<BoardElementProps> = ({ title, children }) => {
   return (
-    <Flex flexDirection="column" textAlign="center">
-      <Text>{title}</Text>
+    <Flex flexDirection="column" textAlign="center" p="5">
+      <Text fontSize="2xl">{title}</Text>
+      <Divider m="5"/>
       {children}
     </Flex>
   );
