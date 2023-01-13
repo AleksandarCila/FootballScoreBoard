@@ -27,10 +27,12 @@ export const NewGame = () => {
   };
 
   return (
-    <Flex justifyContent="space-evenly">
-      <BasicInput value={homeTeam} onChange={setHomeTeam} label="Home Team" />
-      <Box>-</Box>
-      <BasicInput value={awayTeam} onChange={setAwayTeam} label="Away Team" />
+    <Flex justifyContent="space-between" alignItems="center" p="2" gap={5}>
+      <Flex flex={1} justifyContent="space-between">
+        <BasicInput value={homeTeam} onChange={setHomeTeam} label="Home Team" />
+        <Box>-</Box>
+        <BasicInput value={awayTeam} onChange={setAwayTeam} label="Away Team" />
+      </Flex>
       <Tooltip
         hasArrow
         color="red.300"

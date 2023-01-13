@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import { StoreState } from "../../store/Store";
 
-import { Flex } from "@chakra-ui/react";
+import { Divider, Flex } from "@chakra-ui/react";
 import { GameResultWithOptions } from "../GameResultWithOptions";
 import { NewGame } from "../NewGame";
 
@@ -12,6 +12,7 @@ export const SystemData = () => {
   return (
     <Flex flexDirection="column">
       <NewGame />
+      <Divider m="2"/>
       {games.map((game) => (
         <GameResultWithOptions key={game.id} game={game} />
       ))}
