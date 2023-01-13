@@ -1,5 +1,5 @@
 import { FC, ChangeEvent, FocusEvent, useState } from "react";
-import { Flex, Input, Text, Tooltip } from "@chakra-ui/react";
+import { Flex, Input, Tooltip } from "@chakra-ui/react";
 import { useValidate } from "./hooks";
 
 type BasicInputProps = {
