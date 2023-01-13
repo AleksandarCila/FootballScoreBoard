@@ -10,7 +10,7 @@ export const BoardElement: FC<BoardElementProps> = ({ title, children }) => {
   return (
     <Flex flexDirection="column" textAlign="center" p="5">
       <Text fontSize="2xl">{title}</Text>
-      <Divider m="5"/>
+      <Divider my="5"/>
       {children}
     </Flex>
   );
