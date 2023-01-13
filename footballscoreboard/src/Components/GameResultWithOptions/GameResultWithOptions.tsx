@@ -33,7 +33,7 @@ export const GameResultWithOptions: FC<GameResultWithOptionsProps> = ({
 
   const handleUpdateGame = () => {
     const gameUpdated = game;
-    gameUpdated.setScore(homeTeamScore,awayTeamScore);
+    gameUpdated.setScore(homeTeamScore, awayTeamScore);
     dispatch(updateGame(gameUpdated));
   };
 
@@ -43,12 +43,12 @@ export const GameResultWithOptions: FC<GameResultWithOptionsProps> = ({
     awayTeamScore,
     setAwayTeamScore,
     handleFinishGame,
-    handleUpdateGame
+    handleUpdateGame,
   };
 
   return (
     <GameResultContext.Provider value={contextValue}>
-      <Flex justifyContent="space-evenly">
+      <Flex justifyContent="space-evenly" alignItems="center" gap={5} m="2">
         <EditableGameResult game={game} isEditable={true} />
         <GameOptions />
       </Flex>

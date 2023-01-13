@@ -26,7 +26,14 @@ export const TeamScoreDisplay: FC<TeamScoreDisplayProps> = ({
   };
 
   return (
-    <Flex flexDirection={flexDirection} gap={2} mx={3}>
+    <Flex
+      flexDirection={flexDirection}
+      alignItems="center"
+      justifyContent="flex-end"
+      gap={2}
+      mx={3}
+      flex={1}
+    >
       <Text>{name}</Text>
       {isEditable ? (
         <NumberInput
@@ -34,6 +41,7 @@ export const TeamScoreDisplay: FC<TeamScoreDisplayProps> = ({
           value={score}
           min={0}
           onChange={handleChange}
+          width="50px"
         >
           <NumberInputField />
         </NumberInput>

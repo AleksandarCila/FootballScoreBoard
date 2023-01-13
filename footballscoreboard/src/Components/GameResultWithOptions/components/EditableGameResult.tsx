@@ -18,9 +18,13 @@ export const EditableGameResult: FC<EditableGameResult> = ({
 }) => {
   const { homeTeamScore, setHomeTeamScore, awayTeamScore, setAwayTeamScore } =
     useContext(GameResultContext);
-  
+
   return (
-    <Flex justifyContent="space-evenly">
+    <Flex
+      flex={1}
+      justifyContent="center"
+      alignItems="center"
+    >
       <TeamScoreDisplay
         name={game.getHomeTeamName()}
         score={homeTeamScore}
