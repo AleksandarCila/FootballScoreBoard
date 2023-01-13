@@ -13,7 +13,7 @@ export class Game {
     this.id = uuidv4();
     this.created_at = new Date();
   }
-
+  // Setters
   setScore(homeScore: number, awayScore: number) {
     if (homeScore >= 0 && awayScore >= 0) {
       this.home.score = homeScore;
@@ -21,6 +21,7 @@ export class Game {
     }
   }
 
+  // Getters
   getHomeTeamName() {
     return this.home.team.name;
   }
@@ -41,6 +42,7 @@ export class Game {
     return this.home.getScoredGoals() + this.away.getScoredGoals();
   }
 
+  // Functions
   isOlderThan(game:Game){
     if(this.created_at.getTime() < game.created_at.getTime()) return true;
     else return false;
@@ -54,5 +56,10 @@ export class Game {
   hasLessGoalsThan(game:Game){
     if(this.getTotalGoalsScored() < game.getTotalGoalsScored()) return true;
     else return false;
+  }
+
+  hasTeamPlaying(team:string){
+    if(this.home.getTeamName() === team || this.away.getTeamName() === team) return true;
+    return false;
   }
 }

@@ -7,7 +7,7 @@ import { Box, Button, Flex } from "@chakra-ui/react";
 import { BasicInput } from "../Inputs";
 
 import { Game } from "../../Models/Game";
-import { useValidateTeamNames } from "./hooks";
+import { useValidateTeams} from "./hooks";
 
 export const NewGame = () => {
   const [homeTeam, setHomeTeam] = useState("");
@@ -15,7 +15,7 @@ export const NewGame = () => {
 
   const dispatch = useDispatch();
 
-  const {isStartDisabled} = useValidateTeamNames(homeTeam,awayTeam);
+  const {isStartDisabled} = useValidateTeams(homeTeam,awayTeam);
 
   const handleStartNewGame = () => {
     const newGame = new Game(homeTeam,awayTeam);
