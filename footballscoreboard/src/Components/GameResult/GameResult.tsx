@@ -1,20 +1,31 @@
 import { FC } from "react";
 
 import { Box, Flex } from "@chakra-ui/react";
-import { TeamScoreDisplay } from "./components";
+import { TeamScoreDisplay } from "./../TeamScoreDisplay";
 
 import { Game } from "../../Models/Game";
 
 type GameResult = {
   game: Game;
+  isEditable?: boolean;
 };
 
-export const GameResult: FC<GameResult> = ({ game }) => {
+export const GameResult: FC<GameResult> = ({ game, isEditable = false }) => {
   return (
     <Flex justifyContent="space-evenly">
-      <TeamScoreDisplay teamScore={game.home} isPlayingHome={true} />
+      <TeamScoreDisplay
+        name={game.getHomeTeamName()}
+        score={game.getHomeTeamScoredGoals()}
+        isPlayingHome={true}
+        isEditable={isEditable}
+      />
       <Box>-</Box>
-      <TeamScoreDisplay teamScore={game.away} isPlayingHome={false} />
+      <TeamScoreDisplay
+        name={game.getAwayTeamName()}
+        score={game.getAwayTeamScoredGoals()}
+        isPlayingHome={false}
+        isEditable={isEditable}
+      />
     </Flex>
   );
 };

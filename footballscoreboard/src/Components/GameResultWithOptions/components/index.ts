@@ -1,3 +1,2 @@
-export * from './EditableGameScore'
 export * from './GameOptions'
-export * from './EditableTeamScore'
+export * from './EditableGameResult'

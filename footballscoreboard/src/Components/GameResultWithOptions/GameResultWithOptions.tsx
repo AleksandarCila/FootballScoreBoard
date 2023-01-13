@@ -1,7 +1,10 @@
 import { FC, useState } from "react";
 
+import { GameResultContext } from "./context";
+
 import { Flex } from "@chakra-ui/react";
-import { EditableGameScore, GameOptions } from "./components";
+import { GameOptions } from "./components";
+import { EditableGameResult } from "./components";
 
 import { Game } from "../../Models/Game";
 
@@ -12,15 +15,26 @@ type GameResultWithOptionsProps = {
 export const GameResultWithOptions: FC<GameResultWithOptionsProps> = ({
   game,
 }) => {
-  const [homeScore, setHomeScore] = useState(game.getHomeTeamScoredGoals());
-  const [awayScore, setAwayScore] = useState(game.getAwayTeamScoredGoals());
+  const [homeTeamScore, setHomeTeamScore] = useState(
+    game.getHomeTeamScoredGoals()
+  );
+  const [awayTeamScore, setAwayTeamScore] = useState(
+    game.getAwayTeamScoredGoals()
+  );
 
-
+  const contextValue = {
+    homeTeamScore,
+    setHomeTeamScore,
+    awayTeamScore,
+    setAwayTeamScore,
+  };
 
   return (
-    <Flex justifyContent="space-evenly">
-      <EditableGameScore game={game}/>
-      <GameOptions />
-    </Flex>
+    <GameResultContext.Provider value={contextValue}>
+      <Flex justifyContent="space-evenly">
+        <EditableGameResult game={game} isEditable={true} />
+        <GameOptions />
+      </Flex>
+    </GameResultContext.Provider>
   );
 };
