@@ -1,5 +1,7 @@
 import { FC, useState } from "react";
 
+import { useDispatch } from "react-redux";
+
 import { GameResultContext } from "./context";
 
 import { Flex } from "@chakra-ui/react";
@@ -22,12 +24,20 @@ export const GameResultWithOptions: FC<GameResultWithOptionsProps> = ({
     game.getAwayTeamScoredGoals()
   );
 
+  const dispatch = useDispatch();
+
+  const handleFinishGame = (gameId: string) => {
+    
+  }
+
   const contextValue = {
     homeTeamScore,
     setHomeTeamScore,
     awayTeamScore,
     setAwayTeamScore,
   };
+
+  
 
   return (
     <GameResultContext.Provider value={contextValue}>

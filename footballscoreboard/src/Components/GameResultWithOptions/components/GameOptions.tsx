@@ -1,7 +1,12 @@
-import React from 'react'
+import {useContext} from 'react'
+
+import { Button, Stack } from '@chakra-ui/react'
 
 export const GameOptions = () => {
   return (
-    <div>GameOptions</div>
+    <Stack>
+        <Button>Finish</Button>
+        <Button>Update</Button>
+    </Stack>
   )
 }
