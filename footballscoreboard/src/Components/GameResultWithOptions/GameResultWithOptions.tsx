@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 
 import { useDispatch } from "react-redux";
+import { finishGame, updateGame } from "../../store/actions";
 
 import { GameResultContext } from "./context";
 
@@ -26,18 +27,24 @@ export const GameResultWithOptions: FC<GameResultWithOptionsProps> = ({
 
   const dispatch = useDispatch();
 
-  const handleFinishGame = (gameId: string) => {
-    
-  }
+  const handleFinishGame = () => {
+    dispatch(finishGame(game.id));
+  };
+
+  const handleUpdateGame = () => {
+    const gameUpdated = game;
+    gameUpdated.setScore(homeTeamScore,awayTeamScore);
+    dispatch(updateGame(gameUpdated));
+  };
 
   const contextValue = {
     homeTeamScore,
     setHomeTeamScore,
     awayTeamScore,
     setAwayTeamScore,
+    handleFinishGame,
+    handleUpdateGame
   };
-
-  
 
   return (
     <GameResultContext.Provider value={contextValue}>

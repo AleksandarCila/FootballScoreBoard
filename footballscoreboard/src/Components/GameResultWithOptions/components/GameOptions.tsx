@@ -1,12 +1,15 @@
-import {useContext} from 'react'
+import { useContext } from "react";
+import { GameResultContext } from "../context";
 
-import { Button, Stack } from '@chakra-ui/react'
+import { Button, Stack } from "@chakra-ui/react";
 
 export const GameOptions = () => {
+  const { handleFinishGame, handleUpdateGame } = useContext(GameResultContext);
+
   return (
     <Stack>
-        <Button>Finish</Button>
-        <Button>Update</Button>
+      <Button onClick={handleFinishGame}>Finish</Button>
+      <Button onClick={handleUpdateGame}>Update</Button>
     </Stack>
-  )
-}
+  );
+};
