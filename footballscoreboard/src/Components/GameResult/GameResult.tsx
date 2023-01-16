@@ -5,12 +5,12 @@ import { TeamScoreDisplay } from "./../TeamScoreDisplay";
 
 import { Game } from "../../Models/Game";
 
-type GameResult = {
+type GameResultProps = {
   game: Game;
   isEditable?: boolean;
 };
 
-export const GameResult: FC<GameResult> = ({ game, isEditable = false }) => {
+export const GameResult: FC<GameResultProps> = ({ game, isEditable = false }) => {
   return (
     <>
       <Flex justifyContent="center" alignItems="center" gap={2}>

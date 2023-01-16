@@ -7,12 +7,12 @@ import { TeamScoreDisplay } from "../../TeamScoreDisplay";
 
 import { Game } from "../../../Models";
 
-type EditableGameResult = {
+type EditableGameResultProps = {
   game: Game;
   isEditable?: boolean;
 };
 
-export const EditableGameResult: FC<EditableGameResult> = ({
+export const EditableGameResult: FC<EditableGameResultProps> = ({
   game,
   isEditable = false,
 }) => {

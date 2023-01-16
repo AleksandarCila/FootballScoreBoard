@@ -12,6 +12,7 @@ export const useValidateTeams = (
 
   const { teamAlreadyPlaying, error: alreadyPlayingError } =
     useCheckIfAlreadyPlaying(homeTeam, awayTeam);
+    
   const { areNamesInvalid, error: namesValidationError } = useNamesValidation(
     homeTeam,
     awayTeam
@@ -29,7 +30,7 @@ export const useValidateTeams = (
     function updateErrorMessage() {
       setError(`${alreadyPlayingError}${namesValidationError}`);
     },
-    [alreadyPlayingError, namesValidationError]
+    [alreadyPlayingError, namesValidationError, setError]
   );
 
   return {
