@@ -1,5 +1,7 @@
 # Football Score Board
 
+Check [demo](https://peaceful-chimera-c92b64.netlify.app/).
+
 Board consists of 2 main components, System Data and Summary.
 
 System Data is used to create new, update and delete games from the Redux store, while Summary is just a representation of the games ordered as required.
