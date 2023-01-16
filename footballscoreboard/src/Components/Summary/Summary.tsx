@@ -16,6 +16,9 @@ export const Summary = () => {
     return sortGamesByDateAndScore(games);
   }, [games]);
 
+  if(games.length===0){
+    return <Box>There are no games at the moment</Box>
+  }
 
   return (
     <Box>
