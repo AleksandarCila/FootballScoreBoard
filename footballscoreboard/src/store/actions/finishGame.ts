@@ -1,5 +1,4 @@
 import { FINISH_GAME } from "./types";
-import { Game } from "../../Models/Game";
 
 export type FinishGameAction = {
   type: typeof FINISH_GAME;

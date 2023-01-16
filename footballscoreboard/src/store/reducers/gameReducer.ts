@@ -7,8 +7,6 @@ import {
   StartNewGameAction,
 } from "../actions";
 
-// import { IUserActionModel, IUser } from '../model';
-
 const initalState = loadDummyDataToStore();
 
 type reducerAction = StartNewGameAction | FinishGameAction | UpdateGameAction;
@@ -17,6 +15,7 @@ export type GameReducerState = typeof initalState;
 
 export const gameReducer = (state = initalState, action: reducerAction) => {
   const { type, payload } = action;
+
   switch (type) {
     case START_GAME:
       return [...state, payload];
